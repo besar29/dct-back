@@ -8,7 +8,13 @@ const sequelize = new Sequelize(
     host: 'db.agpqtoxykerinjdnaaku.supabase.co',
     dialect: 'postgres',
     logging:false,
-    port:6543
+    port:6543,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
   }
 );
 
