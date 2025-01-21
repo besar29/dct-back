@@ -1,20 +1,14 @@
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(
-  'postgres',
-  'postgres',
-  'Besar321!!!',
+  process.env.DB_DIALECT,
+  process.env.DB_DIALECT,
+  process.env.DB_PW,
   {
-    host: 'db.agpqtoxykerinjdnaaku.supabase.co',
-    dialect: 'postgres',
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_DIALECT,
     logging:false,
-    port:6543,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
+    port:process.env.DB_PORT
   }
 );
 
