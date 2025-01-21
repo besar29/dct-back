@@ -9,7 +9,8 @@
     "build": "build src"
   },  
   "engines": {
-    "node": "20.9.0"
+    "node": "20.9.0",
+    "npm": "10.1.0"
   },
   "author": "",
   "license": "ISC",
