@@ -1,22 +1,24 @@
-const Sequelize = require('sequelize');
+const { Sequelize } = require('sequelize');
 
+// Use the connection URL provided
 const sequelize = new Sequelize(
-  process.env.DB_DIALECT,
-  process.env.DB_DIALECT,
-  process.env.DB_PW,
+  'postgresql://postgres.agpqtoxykerinjdnaaku:Besar321!!!@aws-0-eu-central-1.pooler.supabase.com:6543/postgres',
   {
-    host: process.env.DB_HOST,
-    dialect: process.env.DB_DIALECT,
-    logging:false,
-    port:process.env.DB_PORT
+    dialect: 'postgres',
+    logging: false,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false, // Necessary for some SSL configurations
+      },
+    },
   }
 );
-(async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Connection has been established successfully.');
-  } catch (error) {
-    console.error('Unable to connect to the database:', error);
-  }
-})();
+
 module.exports = sequelize;
+
+// Test the connection
+sequelize
+  .authenticate()
+  .then(() => console.log('Database connection established successfully.'))
+  .catch((err) => console.error('Unable to connect to the database:', err));
