@@ -52,7 +52,7 @@ const getAllUsers = async (req,res) => {
         
         return res.status(200).json(users)
     }catch(err){
-        return res.status(500).json({msg:"Error retrieving users"});
+        return res.status(500).json({msg:"Error retrieving users",err});
     }
 }
 
