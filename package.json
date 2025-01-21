@@ -1,0 +1,23 @@
+{
+  "name": "digital-carbon-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "build src"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@shopify/shopify-api": "^11.6.1",
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "ngrok": "^5.0.0-beta.2",
+    "nodemon": "^3.1.9",
+    "pg": "^8.13.1",
+    "sequelize": "^6.37.5"
+  }
+}
